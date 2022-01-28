@@ -10,7 +10,7 @@
         protected $carrello = [];
         public function __construct($_name, $_lastname, $_age){
             $this->name = $_name;
-            $this->lastname = $_age;
+            $this->lastname = $_lastname;
             $this->age = $_age;
         }
         public function getFullName(){

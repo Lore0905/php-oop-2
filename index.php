@@ -46,10 +46,38 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
 
     $gigi = new User('Gigi', 'Rossi', 20);
     $gigi->pushSecretDataUser('ergrergrer', '153', 25/502);
-    $gigi->getSecretDataUser();
+    $gigi_data = $gigi->getSecretDataUser();
     $gigi->pushCrypto($bitcoin);
-    $gigi->getCarrello();
+    $gigi->pushCrypto($solana);
+    $gigi->pushCrypto($ethereum);
+    $gigi_carello = $gigi->getCarrello();
 
-    var_dump($gigi->getSecretDataUser());
-    var_dump($gigi->getCarrello());
+    var_dump($gigi_data);
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exchange</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Benvenuto <?php echo $gigi->getFullName(); ?></h1>
+        <div>
+            <?php foreach($gigi_carello as $singlecrypto){?>
+                <div class="square">
+                    <?php echo $singlecrypto->name; ?> <br>
+                    <?php echo $singlecrypto->market_cap; ?> <br>
+                    <?php echo $singlecrypto->value; ?> <br>
+                </div>
+            <?php };?>
+        </div>
+        <div>
+            <div class="square">
+                <?php echo $gigi_data ?>
+            </div>
+        </div>
+</body>
+</html>
