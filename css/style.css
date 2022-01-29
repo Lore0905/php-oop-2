@@ -1,10 +1,11 @@
 .square{
     padding: 50px;
-    background-color: #0a1c3b;
     border-radius: 20px;
-    float: left;
     color: white;
 }
 body{
-    /* background-color: #061022; */
+    background-color: #061022;
+}
+.d-flex{
+    display: flex;
 }

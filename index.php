@@ -65,7 +65,7 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
 </head>
 <body>
     <h1>Benvenuto <?php echo $gigi->getFullName(); ?></h1>
-        <div>
+        <div class="d-flex">
             <?php foreach($gigi_carello as $singlecrypto){?>
                 <div class="square">
                     <?php echo $singlecrypto->name; ?> <br>
@@ -74,9 +74,20 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
                 </div>
             <?php };?>
         </div>
+        <!-- button -->
+        <div>
+            <button>BUY</button>
+        </div>
+        <!-- user credit card -->
+        <h3>Questa è la tua carta</h3>
         <div>
             <div class="square">
-                <?php echo $gigi_data ?>
+                <?php foreach($gigi_data as $element){?>
+                    <div class="square">
+                        <?php echo $element;?> <br>
+                    </div>
+                <?php };?>
+                <?php var_dump($gigi_data)?>
             </div>
         </div>
 </body>
