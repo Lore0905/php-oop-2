@@ -26,9 +26,9 @@
             return $this->carrello;
         }
         public function pushSecretDataUser($_credit_card_number, $_credit_card_cvv, $credit_card_data){
-            $this->secret_user_data[] = $_credit_card_number;
-            $this->secret_user_data[] = $_credit_card_cvv;
-            $this->secret_user_data[] = $credit_card_data;
+            $this->secret_user_data['numero carta di credito'] = $_credit_card_number;
+            $this->secret_user_data['CVV'] = $_credit_card_cvv;
+            $this->secret_user_data['data di scadenza'] = $credit_card_data;
         }
         public function getSecretDataUser(){
             return $this->secret_user_data;

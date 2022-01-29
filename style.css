@@ -1,0 +1,50 @@
+.square{
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    color: white;
+    margin-right: 20px;
+}
+body{
+    background-color: #061022;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.d-flex{
+    display: flex;
+    justify-content: space-around;
+}
+.container{
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.credit-card{
+    display: flex;
+}
+li{
+    list-style: none;
+}
+.button{
+    padding: 20px;
+}
+button{
+    padding: 10px 50px ;
+    border-radius: 10px;
+}
+.name-crypto{
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+}
+.square.card{
+    width: 500px;
+}
+.key{
+    color: #3b5ea0;
+}
+.key::after{
+    content: ":";
+}

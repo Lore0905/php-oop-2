@@ -45,14 +45,12 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
     // user
 
     $gigi = new User('Gigi', 'Rossi', 20);
-    $gigi->pushSecretDataUser('ergrergrer', '153', 25/502);
+    $gigi->pushSecretDataUser('152478452', '153', '09/05/2022');
     $gigi_data = $gigi->getSecretDataUser();
     $gigi->pushCrypto($bitcoin);
     $gigi->pushCrypto($solana);
     $gigi->pushCrypto($ethereum);
     $gigi_carello = $gigi->getCarrello();
-
-    var_dump($gigi_data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,33 +60,46 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>exchange</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Benvenuto <?php echo $gigi->getFullName(); ?></h1>
+    <div class="container">
+        <h1>Benvenuto <?php echo $gigi->getFullName(); ?></h1>
         <div class="d-flex">
-            <?php foreach($gigi_carello as $singlecrypto){?>
+            <?php foreach($gigi_carello as $key => $singlecrypto){?>
                 <div class="square">
-                    <?php echo $singlecrypto->name; ?> <br>
-                    <?php echo $singlecrypto->market_cap; ?> <br>
-                    <?php echo $singlecrypto->value; ?> <br>
+                    <div class="name-crypto">
+                        <?php echo $singlecrypto->name; ?> <br>
+                    </div>
+                    <?php echo 'market cap: ' . $singlecrypto->market_cap .  ' euro'; ?> <br>
+                    <?php echo 'value: ' . $singlecrypto->value . ' euro'; ?> <br>
                 </div>
             <?php };?>
         </div>
         <!-- button -->
-        <div>
+        <div class="button">
             <button>BUY</button>
         </div>
         <!-- user credit card -->
-        <h3>Questa è la tua carta</h3>
+        <h3>Questi sono i dati della tua carta</h3>
         <div>
-            <div class="square">
-                <?php foreach($gigi_data as $element){?>
-                    <div class="square">
-                        <?php echo $element;?> <br>
-                    </div>
-                <?php };?>
-                <?php var_dump($gigi_data)?>
+            <div class="credit-card">
+                <div class="square card"> 
+                    <?php foreach($gigi_data as $key => $element){?>
+                        <ul>
+                            <li>
+                                <span class="key">
+                                    <span><?php echo $key;?> </span>
+                                </span>
+                                <span class="value">
+                                    <?php echo $element;?> 
+                                </span>
+                            </li>
+                        </ul>
+                    <?php };?>
+                </div>
             </div>
         </div>
+    </div>
 </body>
 </html>
