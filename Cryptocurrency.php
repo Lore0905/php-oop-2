@@ -1,6 +1,7 @@
 <?php 
-
+require_once __DIR__ . '/Mercati.php';
 class Cryptocurrency {
+    use Mercati;
     public $name;
     public $value;
     public $market_cap;

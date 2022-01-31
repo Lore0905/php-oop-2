@@ -33,12 +33,16 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
     require_once __DIR__ . '/Solana.php';
     require_once __DIR__ . '/Ethereum.php';
     require_once __DIR__ . '/User.php';
+    require_once __DIR__ . '/Cryptocurrency.php';
 
     // crypto
 
     $bitcoin = new Bitcoin('Bitcoin', 32986.80, 692722807095);
+    $bitcoin->pushExchange('Kraken');
+    $bitcoin->pushExchange('Crypto.com');
 
     $solana = new Solana ('Solana', 80, 25513936078);
+    $solana->pushExchange('Young Platform');
 
     $ethereum = new Ethereum ('Ethereum', 2200, 260402385591);
 
@@ -51,6 +55,7 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
     $gigi->pushCrypto($solana);
     $gigi->pushCrypto($ethereum);
     $gigi_carello = $gigi->getCarrello();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,21 +87,18 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
                     <div class="back-square">
                         <h2>Mercati</h2>
                         <ul>
-                            <li>
-                                <?php echo 'test' ?>
-                            </li>
-                            <li>
-                                <?php echo 'test' ?>
-                            </li>
-                            <li>
-                                <?php echo 'test' ?>
-                            </li>
-                            <li>
-                                <?php echo 'test' ?>
-                            </li>
+                            <!-- seleziono l'array exchange-->
+                            <?php $exchange_array = $singlecrypto->exchange ;?>
+                            <!-- ciclo l'array exchange -->
+                            <?php foreach($exchange_array as $single_exchange){ ?>
+                                    <li>
+                                        <a href="#"><?php echo $single_exchange ?></a>
+                                    </li>
+                            <?php }; ?>
+                            
                         </ul>
                     </div>
-                    
+
                 </div>
             <?php };?>
         </div>

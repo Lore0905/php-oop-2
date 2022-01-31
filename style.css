@@ -1,14 +1,28 @@
 .square{
-    width: 300px;
+    width: 400px;
     height: 200px;
     border-radius: 20px;
     color: white;
     margin-right: 20px;
-    background-color: lighten(#061022, 50%);
+    background-color: black;
+    position: relative;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+li{
+    list-style-type: none;
+}
+ul{
+    padding: 0px;
+    margin: 0px;
 }
 body{
     color: white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #061022;
 }
 .d-flex{
     display: flex;
@@ -26,6 +40,7 @@ body{
 }
 li{
     list-style: none;
+    margin-bottom: 5px;
 }
 .button{
     padding: 20px;
@@ -40,7 +55,7 @@ button{
     text-align: center;
 }
 .square.card{
-    width: 500px;
+    padding: 50px;
 }
 .key{
     color: #3b5ea0;
@@ -48,6 +63,26 @@ button{
 .key::after{
     content: ":";
 }
-.front-sqaure{
+.back-square ul{
+    position: relative;
+    right: 70px;
+}
+
+/* hover */
+.back-square{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translate(-50%);
+}
+.square:hover .back-square{
+    display: block;
+}
+.front-square{
+    display: block;
+    padding: 0 20px;
+}
+.square:hover .front-square{
     display: none;
 }
