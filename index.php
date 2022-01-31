@@ -68,11 +68,35 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
         <div class="d-flex">
             <?php foreach($gigi_carello as $key => $singlecrypto){?>
                 <div class="square">
-                    <div class="name-crypto">
-                        <?php echo $singlecrypto->name; ?> <br>
+
+                    <!-- FRONT -->
+                    <div class="front-square">
+                        <div class="name-crypto">
+                            <?php echo $singlecrypto->name; ?> <br>
+                        </div>
+                        <?php echo 'market cap: ' . $singlecrypto->market_cap .  ' euro'; ?> <br>
+                        <?php echo 'value: ' . $singlecrypto->value . ' euro'; ?> <br>
                     </div>
-                    <?php echo 'market cap: ' . $singlecrypto->market_cap .  ' euro'; ?> <br>
-                    <?php echo 'value: ' . $singlecrypto->value . ' euro'; ?> <br>
+
+                    <!-- BACK CARD -->
+                    <div class="back-square">
+                        <h2>Mercati</h2>
+                        <ul>
+                            <li>
+                                <?php echo 'test' ?>
+                            </li>
+                            <li>
+                                <?php echo 'test' ?>
+                            </li>
+                            <li>
+                                <?php echo 'test' ?>
+                            </li>
+                            <li>
+                                <?php echo 'test' ?>
+                            </li>
+                        </ul>
+                    </div>
+                    
                 </div>
             <?php };?>
         </div>

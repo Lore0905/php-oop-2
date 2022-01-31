@@ -4,9 +4,9 @@
     border-radius: 20px;
     color: white;
     margin-right: 20px;
+    background-color: lighten(#061022, 50%);
 }
 body{
-    background-color: #061022;
     color: white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -47,4 +47,7 @@ button{
 }
 .key::after{
     content: ":";
+}
+.front-sqaure{
+    display: none;
 }
