@@ -9,7 +9,11 @@
         protected $secret_user_data = [];
         protected $carrello = [];
         public function __construct($_name, $_lastname, $_age){
-            $this->name = $_name;
+            if(!is_int($_name)){
+                $this->name = $_name;
+            }else{
+                throw new Exception('$_name è un numero');
+            }
             $this->lastname = $_lastname;
             $this->age = $_age;
         }

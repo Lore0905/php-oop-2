@@ -1,5 +1,4 @@
-<!-- Oggi pomeriggio provate ad immaginare quali sono le classi necessarie per creare uno shop online; ad esempio, ci saranno sicuramente dei prodotti da acquistare e degli utenti che fanno shopping.
-Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci potrebbero essere degli utenti premium che hanno diritto a degli sconti esclusivi, oppure diverse tipologie di prodotti. -->
+<!-- Oggi pomeriggio aggiungete un trait ed una exception (con relativa gestione) all'esercizio di venerdì. -->
 
 <!-- replica di un carello di un exhange
 
@@ -48,13 +47,22 @@ Strutturare le classi gestendo l'ereditarietà dove necessario; ad esempio ci po
 
     // user
 
-    $gigi = new User('Gigi', 'Rossi', 20);
-    $gigi->pushSecretDataUser('152478452', '153', '09/05/2022');
-    $gigi_data = $gigi->getSecretDataUser();
-    $gigi->pushCrypto($bitcoin);
-    $gigi->pushCrypto($solana);
-    $gigi->pushCrypto($ethereum);
-    $gigi_carello = $gigi->getCarrello();
+    try{
+        $gigi = new User('Gigi', 'Rossi', 20);
+        $gigi->pushSecretDataUser( 152478452, 153, '09/05/2022');
+        $gigi_data = $gigi->getSecretDataUser();
+        $gigi->pushCrypto($bitcoin);
+        $gigi->pushCrypto($solana);
+        $gigi->pushCrypto($ethereum);
+        $gigi_carello = $gigi->getCarrello();
+    } catch(Exception $e){
+
+        // comando che permette di scrivere l'errore nel terminale
+        error_log($e);
+
+        // text nel caso si verifichi un errore
+        echo 'Il sito è in manutenzione';
+    }
 
 ?>
 <!DOCTYPE html>
