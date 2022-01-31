@@ -48,7 +48,7 @@
     // user
 
     try{
-        $gigi = new User(20, 'Rossi', 20);
+        $gigi = new User('20', '20', 20);
         $gigi->pushSecretDataUser( 152478452, 153, '09/05/2022');
         $gigi_data = $gigi->getSecretDataUser();
         $gigi->pushCrypto($bitcoin);

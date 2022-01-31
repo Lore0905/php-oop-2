@@ -9,13 +9,16 @@
         protected $secret_user_data = [];
         protected $carrello = [];
         public function __construct($_name, $_lastname, $_age){
-            if(!is_int($_name)){
+            if(!is_int($_name) && !is_int($_lastname)){
                 $this->name = $_name;
+                $this->lastname = $_lastname;
             }else{
-                throw new Exception('$_name è un numero');
+                throw new Exception('$_name e $_lastname potrebbero essere un numero');
             }
-            $this->lastname = $_lastname;
-            $this->age = $_age;
+            
+            $this->age = $_age ;
+
+           
         }
         public function getFullName(){
             return $this->name . ' ' . $this->lastname;
