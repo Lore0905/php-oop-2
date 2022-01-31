@@ -48,7 +48,7 @@
     // user
 
     try{
-        $gigi = new User('Gigi', 'Rossi', 20);
+        $gigi = new User(20, 'Rossi', 20);
         $gigi->pushSecretDataUser( 152478452, 153, '09/05/2022');
         $gigi_data = $gigi->getSecretDataUser();
         $gigi->pushCrypto($bitcoin);
@@ -61,7 +61,8 @@
         error_log($e);
 
         // text nel caso si verifichi un errore
-        echo 'Il sito è in manutenzione';
+        echo '<h1> Il sito è in manutenzione </h1>';
+        die();
     }
 
 ?>
